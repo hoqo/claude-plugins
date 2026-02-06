@@ -30,11 +30,11 @@ mongosh "$MONGODB_URI" --quiet --eval "
   const colls = db.getCollectionNames();
   colls.slice(0, 10).forEach(c => {
     print('=== ' + c + ' ===');
-    print('Count: ' + db[c].countDocuments({}));
+    print('Count: ' + db.getCollection(c).countDocuments({}));
     print('Sample:');
-    printjson(db[c].findOne());
+    printjson(db.getCollection(c).findOne());
     print('Indexes:');
-    printjson(db[c].getIndexes());
+    printjson(db.getCollection(c).getIndexes());
     print('');
   });
 "

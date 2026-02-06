@@ -1,7 +1,5 @@
 # Claude Code plugins & skills
 
----
-
 ## What is this?
 
 This is a collection of **Claude Code plugins** :
