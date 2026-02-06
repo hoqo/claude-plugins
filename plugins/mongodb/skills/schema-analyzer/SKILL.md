@@ -26,7 +26,7 @@ Run this to analyze a collection's schema:
 ```bash
 mongosh "$MONGODB_URI" --quiet --eval "
   const coll = '<COLLECTION>';
-  const sample = db[coll].aggregate([{ \$sample: { size: 100 } }]).toArray();
+  const sample = db.getCollection(coll).aggregate([{ \$sample: { size: 100 } }]).toArray();
 
   const schema = {};
   sample.forEach(doc => {

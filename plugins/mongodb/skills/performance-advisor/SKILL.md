@@ -87,8 +87,8 @@ db.collection.createIndex({ email: 1 }, { unique: true })
 ```bash
 mongosh "$MONGODB_URI" --quiet --eval "
   db.getCollectionNames().forEach(coll => {
-    const indexes = db[coll].getIndexes();
-    const stats = db[coll].stats();
+    const indexes = db.getCollection(coll).getIndexes();
+    const stats = db.getCollection(coll).stats();
     print('=== ' + coll + ' ===');
     print('Documents: ' + stats.count + ', Size: ' + (stats.size / 1024 / 1024).toFixed(2) + ' MB');
     indexes.forEach(idx => {
