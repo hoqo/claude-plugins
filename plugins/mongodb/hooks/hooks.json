@@ -1,0 +1,36 @@
+{
+	"hooks": {
+		"SessionStart": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/validate-connection.sh"
+					}
+				]
+			}
+		],
+		"PreToolUse": [
+			{
+				"matcher": "Bash",
+				"hooks": [
+					{
+						"type": "prompt",
+						"prompt": "FIRST: If this Bash command does not involve MongoDB tools (mongosh, mongodump, mongorestore, mongoexport, mongoimport) or MongoDB shell operations, approve immediately. ONLY for MongoDB commands: check if it contains a destructive operation (dropDatabase, dropCollection, deleteMany with empty filter, drop()). If destructive, warn the user and request explicit confirmation. Otherwise approve silently."
+					}
+				]
+			}
+		],
+		"PostToolUse": [
+			{
+				"matcher": "Bash",
+				"hooks": [
+					{
+						"type": "prompt",
+						"prompt": "FIRST: If this Bash command does not involve MongoDB tools (mongosh, mongodump, mongorestore, mongoexport, mongoimport), approve immediately. ONLY for MongoDB commands: if it failed, analyze the error message and suggest a fix. If it succeeded, approve silently."
+					}
+				]
+			}
+		]
+	}
+}

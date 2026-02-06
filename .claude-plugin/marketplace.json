@@ -1,0 +1,17 @@
+{
+	"$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+	"name": "hoqo-claude-plugins",
+	"description": "hoqo's Claude Code plugins",
+	"owner": {
+		"name": "Anastasiia Zmiievska",
+        "email": "nastia@zmvsk.com"
+	},
+	"plugins": [
+		{
+			"name": "mongodb",
+			"description": "MongoDB toolkit: query building, schema analysis, performance optimization, data exploration and migration",
+			"category": "database",
+			"source": "./plugins/mongodb"
+		}
+	]
+}
