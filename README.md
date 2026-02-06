@@ -16,7 +16,6 @@ This is a collection of **Claude Code plugins** :
 | **Claude Code** | [Install Claude Code](https://docs.anthropic.com/en/docs/claude-code) |
 | **mongosh** | MongoDB Shell — `brew install mongosh` (macOS) or [install guide](https://www.mongodb.com/docs/mongodb-shell/install/) |
 | **MONGODB_URI** | Connection string as an environment variable |
-| **Node.js** | Required for the MCP server (`npx mongodb-mcp-server`) |
 
 
 #### Installation
